@@ -71,6 +71,11 @@ def get_interval_sql(date_field, interval, engine):
             'weeks': "date_trunc('week', %s)" % date_field,
             'months': "date_trunc('month', %s)" % date_field,
             'years': "date_trunc('year', %s)" % date_field,
+        },
+        'sqlite': {
+            'days': "django_date_trunc('day', %s)" % date_field,
+            'months': "django_date_trunc('month', %s)" % date_field,
+            'years': "django_date_trunc('year', %s)" % date_field,
         }
     }
 
